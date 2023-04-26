@@ -1,29 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NeoTalk - Neocities Community Forum</title>
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-  </head>
-  <body>
-    <div id="app">
-      <header>
-        <nav id="left-nav">
-          <button id="quickLinks"><i class="uil uil-align-left"></i>Quick Links</button>
-          <div id="quickDropdown" style="display: none;">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-          </div>
-        </nav>
-        <nav id="right-nav">
-          <button><i class="uil uil-bolt"></i>Log In</button>
-          <button><i class="uil uil-clipboard-notes"></i>Register</button>
-        </nav>
-      </header>            
-    </div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
-</html>
+{{> _head title='NeoTalk - Neocities Community Forum'}}
+{{> nav/header}}
+{{> _footer}}

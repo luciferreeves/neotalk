@@ -4,18 +4,18 @@
 /* Color Palette */
 
 :root {
-    --reds: #e63946;
-    --whites: #f1faee;
-    --lights: #a8dadc;
-    --blues: #457b9d;
-    --darks: #1d3557;
+    --reds: #723d46;
+    --whites: #ffe1a8;
+    --lights: #eddea4;
+    --blues: #fdf0d5;
+    --darks: #472d30;
 }
 
 /* General */
 
 body {
-    background-color: var(--darks);
-    color: var(--whites);
+    background-color: var(--blues);
+    color: var(--darks);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 12px;
     margin: 0;
@@ -25,7 +25,7 @@ body {
 /* Navigation Header */
 
 header {
-    background-color: var(--blues);
+    background-color: var(--reds);
     color: var(--whites);
     padding: 5px 10px;
     display: flex;
@@ -37,15 +37,17 @@ header nav {
     align-items: center;
 }
 
-nav button {
-  background: none;
-  border: none;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  font-size: inherit;
-  color: inherit;
+nav>button,
+nav>a {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: inherit;
+    color: inherit;
     padding: 10px;
+    text-decoration: none;
 }
 
 #quickDropdown {
@@ -66,7 +68,7 @@ nav button {
 
 .dropdown {
     background-color: var(--lights);
-    width: 100px;
+    width: 150px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 1;
@@ -74,14 +76,25 @@ nav button {
 
 .dropdown a {
     display: block;
-    padding: 10px;
+    padding: 10px 10px;
     color: var(--darks);
     text-decoration: none;
+    border-bottom: 1px solid rgba(29, 53, 87, 0.250);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dropdown i {
+    color: var(--darks);
 }
 
 .dropdown a:hover {
+    color: var(--lights);
     background-color: var(--reds);
-    color: var(--whites);
+}
+
+.dropdown a:hover>i {
+    color: var(--lights);
 }
 
 .dropdown a:first-child {
@@ -92,6 +105,7 @@ nav button {
 .dropdown a:last-child {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    border-bottom: none;
 }
 
 /* Icons */

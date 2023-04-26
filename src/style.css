@@ -57,6 +57,7 @@ nav button {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     display: none;
+    z-index: 1;
 }
 
 #quickDropdown::before {
@@ -89,15 +90,6 @@ nav button {
 #quickDropdown a:last-child {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-}
-
-/* Hide and Show */
-.hide {
-    display: none !important;
-}
-
-.show {
-    display: block !important;
 }
 
 /* Icons */

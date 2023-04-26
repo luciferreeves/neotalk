@@ -8,6 +8,9 @@ const auth = getAuth(app);
 auth.onAuthStateChanged((user) => {
     if (user && user.emailVerified) {
         window.location.href = "/";
+    } else if (user && !user.emailVerified) {
+        auth.signOut();
+        alert("Please verify your email before logging in.");
     }
 });
 

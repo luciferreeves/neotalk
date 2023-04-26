@@ -23,17 +23,7 @@ loginForm?.addEventListener("submit", (e) => {
     const email = emailInput as HTMLInputElement;
     const password = passwordInput as HTMLInputElement;
     signInWithEmailAndPassword(auth, email.value, password.value)
-        .then((user) => {
-            const userCredential = user;
-            const userObj = userCredential.user;
-            if (!userObj.emailVerified) {
-                auth.signOut();
-                alert("Please verify your email before logging in.");
-                return;
-            } else {
-                window.location.href = "/";
-            }
-        })
+        .then(() => {})
         .catch((error) => {
             const errorMessage = error.message;
             alert(errorMessage);

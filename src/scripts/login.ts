@@ -6,7 +6,7 @@ const auth = getAuth(app);
 
 // check auth state
 auth.onAuthStateChanged((user) => {
-    if (user) {
+    if (user && user.emailVerified) {
         window.location.href = "/";
     }
 });
@@ -20,17 +20,30 @@ loginForm?.addEventListener("submit", (e) => {
     const email = emailInput as HTMLInputElement;
     const password = passwordInput as HTMLInputElement;
     signInWithEmailAndPassword(auth, email.value, password.value)
-        .then(() => {
-            // Signed in
-            window.location.href = "/";
-            // ...
-        }
-        )
+        .then((user) => {
+            const userCredential = user;
+            const userObj = userCredential.user;
+            if (!userObj.emailVerified) {
+                auth.signOut();
+                alert("Please verify your email before logging in.");
+                return;
+            } else {
+                window.location.href = "/";
+            }
+        })
         .catch((error) => {
-            const errorCode = error.code;
             const errorMessage = error.message;
-            console.log(errorCode, errorMessage);
-        }
-        );
+            alert(errorMessage);
+        });
 });
 
+const urlParams = new URLSearchParams(window.location.search);
+const registered = urlParams.get('registered');
+if (registered) {
+    const messageBox = document.createElement("div");
+    messageBox.classList.add("messageBox");
+    const messageBoxText = document.createElement("p");
+    messageBoxText.innerText = "You have successfully registered! Please check your email to verify your account.";
+    messageBox.appendChild(messageBoxText);
+    document.body.appendChild(messageBox);
+}

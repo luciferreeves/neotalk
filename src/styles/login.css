@@ -55,3 +55,15 @@
     background-color: var(--darks);
 }
 
+.messageBox {
+    width: calc(540px - 2em);
+    margin: 2em auto;
+    background-color: var(--whites);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 0.5em 1em;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--reds);
+}
+

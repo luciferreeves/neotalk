@@ -1,0 +1,15 @@
+{{> _head title='NeoTalk - Login'}}
+{{> nav/header}}
+
+<div id="loginBox">
+    <h1>Register with NeoTalk</h1>
+    <form id="registerForm">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="Email" autocomplete="off" required />
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Password" required />
+        <input type="submit" value="Register" />
+    </form>
+</div>
+<script type="module" src="/src/scripts/register.ts"></script>
+{{> _footer}}

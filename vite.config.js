@@ -27,6 +27,7 @@ export default defineConfig({
             input: {
                 index: resolve(__dirname, 'index.html'),
                 login: resolve(__dirname, 'login/index.html'),
+                register: resolve(__dirname, 'register/index.html'),
             },
             output: {
                 entryFileNames: 'scripts/[name].js',

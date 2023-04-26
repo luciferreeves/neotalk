@@ -89,6 +89,9 @@ export const loginComponent = () => {
       registerButton.appendChild(registerIcon);
       const registerText = document.createTextNode("Register");
       registerButton.appendChild(registerText);
+      registerButton.addEventListener("click", () => {
+        window.location.href = "/register/";
+      });
 
       handleLoginContainer?.appendChild(loginButton);
       handleLoginContainer?.appendChild(registerButton);

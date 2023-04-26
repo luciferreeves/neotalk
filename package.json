@@ -13,7 +13,7 @@
     "vite": "^4.2.0"
   },
   "dependencies": {
-    "firebase": "^9.19.1",
+    "firebase": "^9.20.0",
     "terser": "^5.17.1",
     "vite-plugin-handlebars": "^1.6.0"
   }

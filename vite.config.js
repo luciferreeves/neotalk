@@ -1,6 +1,6 @@
 // vite.config.js
 
-import { defineConfig, splitVendorChunk, splitVendorChunkPlugin } from 'vite'
+import { defineConfig, splitVendorChunkPlugin } from 'vite'
 
 // Do not add hsah to the file names in production
 // Split into multiple chunks both JS and CSS files

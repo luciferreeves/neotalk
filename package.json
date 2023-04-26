@@ -13,6 +13,7 @@
     "vite": "^4.2.0"
   },
   "dependencies": {
-    "firebase": "^9.19.1"
+    "firebase": "^9.19.1",
+    "terser": "^5.17.1"
   }
 }

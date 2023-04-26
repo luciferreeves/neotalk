@@ -1,0 +1,57 @@
+#loginBox {
+    width: 540px;
+    margin: 2em auto;
+    background-color: var(--whites);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#loginBox h1 {
+    margin: 0 0 1em;
+    font-size: 1.5em;
+    text-align: center;
+    background-color: var(--reds);
+    color: var(--whites);
+    padding: 1em 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#loginBox form {
+    padding: 0 2em 2em;
+}
+
+#loginBox form label {
+    display: block;
+    margin: 1em 0 0.5em;
+    color: var(--darks);
+}
+
+#loginBox form input {
+    width: calc(100% - 1em);
+    display: block;
+    padding: 0.5em;
+    border: 1px solid var(--darks);
+    border-radius: 5px;
+    margin: 0.5em auto;
+}
+
+#loginBox form input:focus {
+    outline-color: var(--reds);
+}
+
+#loginBox form input[type="submit"] {
+    width: 494px;
+    padding: 0.5em;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--reds);
+    color: var(--whites);
+    cursor: pointer;
+    margin-top: 1.5em;
+}
+
+#loginBox form input[type="submit"]:hover {
+    background-color: var(--darks);
+}
+

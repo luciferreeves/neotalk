@@ -16,7 +16,6 @@ export const loginComponent = () => {
   // Check if user is logged in
   auth.onAuthStateChanged((user) => {
     if (user) {
-      console.log("User is logged in");
       // User is signed in, build user based nav
       const notifications = document.createElement("button");
       const notificationIcon = document.createElement("i");
@@ -43,7 +42,6 @@ export const loginComponent = () => {
       handleLoginContainer?.appendChild(privateMessages);
       handleLoginContainer?.appendChild(profile);
     } else {
-      console.log("User is not logged in");
       const loginButton = document.createElement("button");
       const loginIcon = document.createElement("i");
       loginIcon.classList.add("uil", "uil-bolt");

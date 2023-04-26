@@ -52,11 +52,6 @@ nav button {
     position: absolute;
     top: 40px;
     left: 20px;
-    background-color: var(--lights);
-    width: 100px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    z-index: 1;
 }
 
 #quickDropdown::before {
@@ -69,24 +64,32 @@ nav button {
     border-bottom: 10px solid var(--lights);
 }
 
-#quickDropdown a {
+.dropdown {
+    background-color: var(--lights);
+    width: 100px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.dropdown a {
     display: block;
     padding: 10px;
     color: var(--darks);
     text-decoration: none;
 }
 
-#quickDropdown a:hover {
+.dropdown a:hover {
     background-color: var(--reds);
     color: var(--whites);
 }
 
-#quickDropdown a:first-child {
+.dropdown a:first-child {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 
-#quickDropdown a:last-child {
+.dropdown a:last-child {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }

@@ -1,6 +1,8 @@
 /* This is the main stylesheet for NeoTalk - A neocities chatroom. */
 /* Styles are based on retro chatrooms from the 90s. */
 
+/* Import notifications css */
+
 /* Color Palette */
 
 :root {
@@ -10,7 +12,6 @@
     --blues: #fdf0d5;
     --darks: #472d30;
 }
-
 /* General */
 
 body {
@@ -66,6 +67,109 @@ nav>a {
     border-bottom: 10px solid var(--lights);
 }
 
+#notification-box {
+    position: fixed;
+    top: 50px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.notification {
+    background-color: var(--whites);
+    color: var(--darks);
+    padding: 15px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fade-in 0.3s ease-in-out forwards, slide-in 0.5s ease-in-out forwards;
+    height: 40px;
+    width: 250px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.notification i {
+    margin-right: 10px;
+    font-size: 32px;
+    color: var(--reds);
+}
+
+.notification h3 {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+
+.notification p {
+    font-size: 12px;
+    margin: 0;
+    text-align: left;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.notification.hide {
+    opacity: 0;
+    transform: translateY(0);
+    animation: slide-out 0.5s ease-in-out forwards, fade-out 0.3s ease-in-out forwards 0.5s;
+}
+
+.notification+.notification {
+    margin-top: 10px;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateY(-10px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-out {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+
 .dropdown {
     background-color: var(--lights);
     width: 150px;
@@ -120,4 +224,23 @@ i {
     height: auto;
     display: block;
     margin: 2em auto;
+}
+
+#notificationsButton.has-notifications > i {
+    /* flash the icon */
+    animation: flash 1s infinite;
+}
+
+@keyframes flash {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

@@ -24,6 +24,7 @@ export const loginComponent = () => {
     if (user) {
 
       const notifications = document.createElement("button");
+      notifications.id = "notificationsButton";
       const notificationIcon = document.createElement("i");
       notificationIcon.classList.add("uil", "uil-bell");
       notifications.appendChild(notificationIcon);

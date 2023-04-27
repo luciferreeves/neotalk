@@ -1,11 +1,12 @@
 // Functions Main Runner
 
-import { quickLinksDropdown, profileDropdown } from "./dropdowns";
+import { quickLinksDropdown, profileDropdown, notificationDropdown } from "./dropdowns";
 
 class FunctionLoader {
   constructor() {
     quickLinksDropdown();
     profileDropdown();
+    notificationDropdown();
   }
 }
 

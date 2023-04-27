@@ -49,3 +49,28 @@ export const profileDropdown = () => {
     });
   });
 };
+
+export const notificationDropdown = () => {
+  mutationObserver("notificationDropdown", () => {
+    const notificationDropdown: HTMLElement | null = document.getElementById("notificationDropdown");
+
+    document.addEventListener("click", (e) => {
+      if (notificationDropdown && notificationDropdown.style.display === "flex") {
+        if (
+          e.target !== notificationDropdown &&
+          e.target !== document.getElementById("notificationsButton")
+        ) {
+          notificationDropdown.style.display = "none";
+        }
+      }
+    });
+
+    document.getElementById("notificationsButton")?.addEventListener("click", () => {
+      if (notificationDropdown && notificationDropdown.style.display === "none") {
+        notificationDropdown.style.display = "flex";
+      } else if (notificationDropdown) {
+        notificationDropdown.style.display = "none";
+      }
+    });
+  });
+}

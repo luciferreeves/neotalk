@@ -1,12 +1,13 @@
 // Components Main Runner
 
 import { loginComponent } from "./loginComponent";
-import { notificationsComponent } from "./notficationComponent";
+import { notificationsComponent, notificationDropdownComponent } from "./notficationComponent";
 
 class ComponentLoader {
   constructor() {
     loginComponent();
     notificationsComponent();
+    notificationDropdownComponent();
   }
 }
 
